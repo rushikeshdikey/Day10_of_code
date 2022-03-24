@@ -1,10 +1,10 @@
-# start to python day-9 code
+# start to python day-10 code
 # starting code is basics learned
 # main project code at end
 
 # Author: Rushikesh Dikey
-# Date: 13-03-2022
-
+# Date: 23-03-2022
+# went on vacation
 import math
 # def great():
 #     print("My name is Rushikesh Dikey")
