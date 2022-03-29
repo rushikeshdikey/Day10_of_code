@@ -5,94 +5,98 @@
 # Author: Rushikesh Dikey
 # Date: 24-03-2022
 # went on vacation
-import math
-# def great():
-#     print("My name is Rushikesh Dikey")
-#     print("My age is 25")
-#     print("I leave at Amravati")
+# programing_dict = {"Rushi": "This is me", "Babita": "She is my mother", "Jivan": "He is my father"}
 #
+# #print(programing_dict["Rushi"])
 #
-# great()
+# for name in programing_dict:
+#     print(name)
+#     print(programing_dict[name])
 #
+# empty_dict = {}
 #
+# for name in empty_dict:
+#     empty_dict = input("Enter key and value")
 #
-# def greet_with_name(name, location):
-#     print(f"My name is {name}")
-#     print(f"How do you do {name}?")
-#     print(f"I live in {location}")
+# #print(empty_dict[name])
 #
+# student_scores = {"Ram": 91,
+#                   "Sam": 87,
+#                   "Tam": 73,
+#                   "Pam": 56,
+#                   "Zam": 34}
 #
-# name = input("Enter your name: ")
-# location = input("Enter your location: ")
+# student_grades = {}
 #
-# greet_with_name(name, location)
-#
-
-# Paint area Calculator
-#
-# wall_height = int(input("Enter height of the wall: "))
-# wall_width = int(input("Enter width of the wall: "))
-#
-# coverage = 5
-#
-# # use ceil function to round up
-# def paint_calc(wall_height, wall_width, coverage):
-#     number_of_cans = math.ceil((wall_height * wall_width) / coverage)
-#     print(f"Number of cans required: {number_of_cans}")
-#
-#
-# paint_calc(wall_height, wall_width, coverage)
-
-
-# def prime_checker(number):
-#     is_prime = True
-#     for i in range(2, number):
-#         if number % i == 0:
-#             is_prime = False
-#     if is_prime:
-#         print("It is a prime number")
+# for student in student_scores:
+#     scores = student_scores[student]
+#     if scores > 90:
+#         student_grades[student] = "Outstanding"
+#     elif scores < 90 and scores > 80:
+#         student_grades[student] = "Good"
+#     elif scores < 80 and scores > 60:
+#         student_grades[student] = "Average"
+#     elif scores < 60 and scores > 35:
+#         student_grades[student] = "Poor"
 #     else:
-#         print("Its is not prime")
+#         student_grades[student] = "Fail"
 #
+# print(student_grades)
 #
-# number = int(input("Enter the number: "))
-# prime_checker(number)
+# for grades in student_grades:
+#
+#     print(grades +"'s performance has been "+ student_grades[grades])
+#     # print(student_grades[grades])
+
+# nesting dict
+capitals = {"Maharashtra": "Mumbai",
+            "Kerela": "Trivandrum",
+            "MadhyaPradesh": "Bhopal"}
+
+# nesting in list in a dict
+travel_log = {"Maharashtra": ["Mumbai", "Pune", "Nagpur"],
+              "Kerela": ["Trivandrum", "Kochi", "Alleppy"],
+              "MadhyaPradesh": ["Bhopal", "Indore"]}
+
+# nesting in dict in dist
+travel_log1 = {"Maharashtra": {"cities_visited": ["Mumbai", "Pune", "Nagpur"], "total_visits": 12},
+               "Kerela": {"cities_visited": ["Trivandrum", "Kochi", "Alleppy"], "total_visits": 8},
+               "MadhyaPradesh": {"cities_visited": ["Bhopal", "Indore"], "total_visits": 3}}
+
+# nesting dist in a list
+travel_log2 = [
+    {
+        "State": "Maharashtra",
+        "cities_visited": ["Mumbai", "Pune", "Nagpur"],
+        "total_visits": "12"
+    },
+    {
+        "State": "Kerela",
+        "cities_visited": ["Trivandrum", "Kochi", "Alleppy"],
+        "total_visits": 8
+    },
+    {
+        "State": "MadhyaPradesh",
+        "cities_visited": ["Bhopal", "Indore"],
+        "total_visits": 3
+    },
+]
+
+# function to add new data to list
+# def add_new_state(State, cities_visited, total_visits):
+#
+#     new_state = {}
+#     new_state["State"] = State
+#     new_state["cities_visited"] = cities_visited
+#     new_state["total_visits"] = total_visits
+#     travel_log2.append(new_state)
+#
+# add_new_state("Rajasthan", ["Jaipur", "Udaypur"], 9)
+# print(travel_log2)
+#
+
+# to print particular value
+print("When i visited " + travel_log2[0]["State"] + " and went to " + travel_log2[0]["cities_visited"][
+    2] + " that was my " + travel_log2[0]["total_visits"] + "th time")
 
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
-
-def encrypt(plain_text, shift_amount, direction):
-    if direction == 'encode':
-        cipher_text = ""
-        for letter in plain_text:
-            position = alphabet.index(letter)
-            new_position = position + shift_amount
-            new_letter = alphabet[new_position]
-            cipher_text += new_letter
-        print(f"The encrypt text is {cipher_text}")
-
-
-def decrypt(plain_text, shift_amount, direction):
-    if direction == 'decode':
-        cipher_text = ""
-        for letter in plain_text:
-            position = alphabet.index(letter)
-            new_position = position - shift_amount
-            new_letter = alphabet[new_position]
-            cipher_text += new_letter
-        print(f"The decrypt text is {cipher_text}")
-
-decide = True
-while decide:
-    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-    text = input("Type your message:\n").lower()
-    shift = int(input("Type the shift number:\n"))
-
-    shift = shift % 26
-    encrypt(text, shift, direction)
-    decrypt(text, shift, direction)
-
-    result = input("Do you want to continue: ")
-    if result == "no":
-        decide = False
